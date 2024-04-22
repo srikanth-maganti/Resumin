@@ -1,0 +1,208 @@
+
+<% layout('/layouts/boilerplate') -%>
+    <style>
+        
+                .mains{
+               
+               
+                margin:auto;
+                margin-top:100px;
+                padding: 20px;
+                display:flex;
+                flex-direction: column;
+                }
+
+                /* head  */
+                .head{
+                height:15%;
+                margin:10px;
+                margin-bottom:5px;
+                
+                }
+                .title {
+                font-size: 26pt;
+                font-weight: bold;
+                margin-top: 0;
+                color: #000;
+                }
+                .subtitle {
+                font-size: 15pt;
+                font-weight: bold;
+                margin-bottom: 16pt;
+                color: #666;
+                }
+                .link
+                {
+                display:flex;
+                justify-content: space-between;
+                }
+                .title
+                {
+                text-align: center;
+                }
+                .top
+                {
+                width:fit-content;
+                margin:auto;
+                }
+                .linkedin
+                {
+                margin-left:30px;
+                }
+                i{
+                margin-right:5px;
+                }
+                .github
+                {
+                margin-right:30px;
+                }
+
+
+                /*content*/
+
+                .content
+                {   flex-grow: 1;
+                    margin:10px;
+                    margin-top:5px;
+                
+                    display:flex;
+                    flex-direction:column;
+
+                }
+
+                .section-title {
+                font-size: 20pt;
+                font-weight: bold;
+                margin-top: 20pt;
+                margin-bottom: 10pt;
+                color: #4a86e8;
+                }
+                .section-content {
+                margin-bottom: 20pt;
+                }
+                ul {
+                    list-style-type: none;
+                
+                }
+                ul li {
+                margin-bottom: 10pt;
+                
+                }
+
+                .link a
+                {
+                opacity:0.8;
+                color:grey;
+                text-decoration:none;
+                font-size:small !important;
+                }
+
+
+
+
+    </style>
+    <div class="mains" id="resume">
+            <div class="head">
+                    <div class="top">
+                        <div class="title"><%=data.name.toUpperCase() %></div>
+                        <div class="subtitle"><%=data.email%>|<%= data.phno %></div>
+                    </div>
+                    
+                    <div class="link">
+                        <div class="linkedin"><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/<%=data.linkedin%>/"><%=data.linkedin %></a></div>
+                        <div class="github"><i class="fa-brands fa-github"></i><a href="https://github.com/<%=data.github%>"><%= data.github %></a></div>
+                    </div>
+            </div>
+            <div class="content">
+
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+                   
+                    <ul class="section-content">
+                        <% for(skill of data.skills.split("/")) {%>
+
+                        <li>❖ <%=skill.toUpperCase() %></li>
+                        <%} %>
+                       
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <ul class="section-content">
+                        <% for(let i=0;i<(data.education).length;i+=4) {%>
+                        <li>❖ <%=data.education[i].toUpperCase()%> &nbsp; | &nbsp; <%=data.education[i+1].toUpperCase() %> | &nbsp;&nbsp;&nbsp; CGPA:<%=data.education[i+2]%>|(<%=data.education[i+3]%>)</li>
+                        <%}%>
+                      
+                    </ul>
+                </div>
+             <% if(data.experience && (data.experience[0] || data.experience[1]|| data.experience[2])){%>
+                <div class="section">
+                    <h2 class="section-title">Experience</h2>
+                    <ul class="section-content">
+                        <% for(let i=0;i<(data.experience).length;i+=3){%>
+                        <li><b>❖ <%=data.experience[i].toUpperCase()%>|<%=data.experience[i+1].toUpperCase()%></b></li>
+                        <li> 
+                            <ul>
+                                 <li><%=data.experience[i+2]  %></li>
+                           </ul>
+                        </li>
+                        
+                        <%}%>
+                    </ul>
+                </div>
+            <%} %>
+                
+                <div class="section">
+                    <h2 class="section-title">Academic Projects</h2>
+                    <ul class="section-content">
+                        <% for(let i=0;i<(data.project).length;i+=2){%>
+                        <li><b>❖ <%=data.project[i].toUpperCase()%></b></li>
+                        <li>
+                            <ul>
+                                <li><%=data.project[i+1]%></li>
+                            </ul>
+                        </li>
+                       
+                        <%}%>
+                        
+                    </ul>
+                </div>
+                
+            <%if(data.achievements  && (data.achievements[0] || data.achievements[1])){%>
+                <div class="section">
+                    <h2 class="section-title">Achievements</h2>
+                    <ul class="section-content">
+
+                            <% for(achieve of data.achievements){%>
+                            <li>❖ <%=achieve%></li>
+                            <%}%>
+                       
+                    </ul>
+                </div>
+            <%}%>
+
+                <div class="section">
+                    <h2 class="section-title">Hobbies</h2>
+                   
+                    <ul class="section-content">
+                        <% for(hob of data.hobbies.split("/")) {%>
+
+                        <li>❖ <%=hob.charAt(0).toUpperCase()+hob.slice(1); %></li>
+                        <%} %>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+    </div>
+    <a type="submit" class="btn btn-success col-2 offset-5 mb-3 mt-3 download" >Download</a>
+    <script src="/js/download.js"></script>
+
+
+
+
+
+
+
+  

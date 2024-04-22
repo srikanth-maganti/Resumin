@@ -1,0 +1,40 @@
+<% layout('/layouts/boilerplate') -%>
+    <style>
+        .main-view{
+            
+            
+            margin:auto;
+            margin-top:100px;
+            margin-bottom:1.5rem;
+            border:0.05px solid rgb(174, 172, 172);
+            
+        }
+        .btns{
+           display:flex;
+           justify-content: center;
+           
+
+        }
+        .cancel,.Use{
+           width:6rem;
+           margin:2rem;
+        }
+    </style>
+
+   <div class="main-view">
+        <% if(id==="resume"){%>
+        <img src="/image1.jpg" alt="nothing" class="img-fluid">
+        <div class="btns">
+            <a href="/templates"><button class="btn btn-danger btn-sm cancel">Cancel</button></a>
+            <a href="/templates/new"><button class="btn btn-primary btn-sm Use">Use</button></a> 
+        </div>
+       <%} %>
+       <% if(id==="cv"){%>
+        <img src="/image1.jpg" alt="nothing">
+        <div class="btns">
+            <a href="/templates" class="btn btn-outline-dark"><button >Cancel</button></a>
+            <a href="/templates/new"><button class="btn btn-outline-dark">Use</button></a> 
+        </div>
+       <%} %>
+       
+     </div>

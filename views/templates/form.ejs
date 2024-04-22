@@ -1,0 +1,138 @@
+<% layout('/layouts/boilerplate') -%>
+    <style>
+        /* form */
+        label{
+            margin-top: 5px;
+            font-weight: 600;
+            font-size: large;
+        }
+        .input-group
+        {
+            margin-bottom:5px;
+        }
+        .loader
+        {
+            top:50%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+            display:none;
+            position: absolute;
+
+        }
+        .loader img{
+            width:300px;
+            height: 300px;
+            border-radius: 20px;
+        }
+        .but{
+            width:fit-content;
+            margin:auto;
+        }
+        span{
+            color:red;
+        }
+  </style>
+    <div class="row" id="page">
+        <div class="col-8 offset-2 mt-5 mb-3" >
+                <form action="/templates" method="post" class="form needs-validation" novalidate>
+                    <div class="mt-2">
+                        <label for="name" class="form-label">Name<span>*</span>
+                        </label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Ex:Maganti Srikanth" required>
+                        <div class="invalid-feedback">
+                            Please enter your Name
+                          </div>
+                    </div>
+                    <div>
+                        <label for="email" class="form-label">Email<span>*</span></label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Ex:abcd@gmail.com" required>
+                        <div class="invalid-feedback">
+                            Please enter your Email
+                          </div>
+                    </div>
+                    <div>
+                        <label for="phno" class="form-label">Mobile NO<span>*</span></label>
+                        <input type="number" name="phno" id="phno" class="form-control" placeholder="Ex:987654321" required>
+                        <div class="invalid-feedback">
+                            Please enter your Phone No.
+                          </div>
+                    </div>
+                    <div>
+                        <label for="linkedin" class="form-label">Linkedin id<span>*</span></label>
+                        <input type="text" name="linkedin" id="linkedin" class="form-control" placeholder="Ex:srikanth-maganti" required>
+                        <div class="invalid-feedback">
+                            Please enter your linkedin id
+                          </div>
+                    </div>
+                    <div>
+                        <label for="github" class="form-label">Github<span>*</span></label>
+                        <input type="text" name="github" id="github" class="form-control" placeholder="Ex:srikanth-maganti" required>
+                        <div class="invalid-feedback">
+                            Please enter your github id
+                          </div>
+                    </div>
+                    <div class="skills">
+                        <label for="skills" class="form-label">Skills:(should be separated by /)<span>*</span></label>
+                        <input type="text" id="skills" name="skills" class="form-control" placeholder="Ex:eat/code/sleep" required>
+                        <div class="invalid-feedback">
+                            Please enter your some Skills
+                          </div>
+                    </div>
+                    <div class="education">
+                        <label for="ed1" class="form-label">Education<span>*</span> &nbsp;<i class="fa-solid fa-plus added"></i>
+                        </label>
+                        <div class="input-group ">
+                            <input type="text"  name="education" class="form-control" placeholder="course& branch" required>
+                            <input type="text"  name="education" class="form-control" placeholder="university/clg" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text"  name="education" class="form-control" placeholder="cgpa" required>
+                            <input type="text"  name="education" class="form-control" placeholder="Ex: june 2022-april 2026" required>
+                        </div>  
+                            
+                    </div> 
+                    <div class="experience">
+                        <label for="experience" class="form-label">Experience &nbsp;&nbsp<i class="fa-solid fa-plus addexp"></i></label>
+                        <div class="input-group">
+                            <input type="text"  name="experience" class="form-control" placeholder="your position">
+                            <input type="text" name="experience" class="form-control" placeholder="company">
+                        </div>  
+                        <input type="text" name="experience" placeholder="experience desc" class="form-control mb-3">
+                        
+                    </div>
+                    <div class="project mb-3">
+                        <label for="project" class="form-label">Project<span>*</span> &nbsp;&nbsp<i class="fa-solid fa-plus addpro"></i></label>
+                        <div class="input-group">
+                         <input type="text"  name="project" class="form-control" placeholder="projecttitle" required>
+                        <textarea name="project" class="form-control" cols="30" rows="2"  placeholder="project-desc" required></textarea>
+                         </div>
+                    </div>
+                <div class="achievements">
+                        <label for="achievements" class="form-label">Achievements <i class="fa-solid fa-plus addach"></i></label>
+                        
+                        <input type="text" id="achievements" name="achievements" class="form-control mb-3">
+                        <input type="text" id="achievements" name="achievements" class="form-control mb-3">
+                        
+                    </div>
+                    <div class="hobbies mb-3">
+                        <label for="hobbies" class="form-label">Hobbies(should be separated by /)<span>*</span> <br></label>
+                        <div class="input-group">  
+                            <input type="text" id="hobbies" name="hobbies" class="form-control" placeholder="coding" required>
+                        </div>
+                    </div>
+                   
+
+
+                    <div class="but">
+                    <button type="submit" class="btn btn-success" id="submit">SUBMIT</button>
+                    </div>
+                </form>    
+        </div>
+    </div>
+    <div class="loader">
+        <img src="/ios1.gif" alt="loading resume">
+    </div>
+        
+        <script src="/js/script.js"></script>
+        
+
