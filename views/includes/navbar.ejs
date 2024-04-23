@@ -1,10 +1,10 @@
-<nav class="navbar bg-body-tertiary" style="position:fixed;top:0px;width:100%;z-index: 999;">
+<nav class="navbar bg-body-tertiary" style="position:fixed;top:0px;width:100%;z-index: 999;background-color: #001233 !important;">
     <div class="container-fluid ">
-      <a class="navbar-brand" href="/templates"><i class="fa-regular fa-snowflake"></i> Resumin</a>
+      <a class="navbar-brand" href="/templates" style="color: #fff;"><i class="fa-regular fa-snowflake" style="color:#89c2d9;"></i> Resumin</a>
       <% if(currpage=="home"){%>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="highlight">
-        <button class="btn btn-outline-success search" type="button" >Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="highlight" style="height:1.5rem">
+        <button class="btn btn-outline-success btn-sm search" type="button" style="height:1.5rem;"  >&nbsp;<i class="fa-solid fa-magnifying-glass"></i> &nbsp; </button>
       </form>
       <%}%>
     </div>

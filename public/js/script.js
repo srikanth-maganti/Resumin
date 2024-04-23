@@ -180,21 +180,41 @@ function delpro_achieve(){
 
 }
 
-// let btn=document.querySelector("#submit");
 
-// btn.addEventListener("click",(event)=>{
-//     event.preventDefault();
-//     let div=document.querySelector("#page");
-//     div.style.display="none";
-//     let loader=document.querySelector(".loader");
-//     loader.style.display="block";
-//     let form=document.querySelector(".form");
-//     form.submit();
-//     console.log("submitting");
 
-    
+let btn=document.querySelector("#submit");
 
-// });
+btn.addEventListener("click",()=>{
+            
+        const formInputs = document.querySelectorAll('form input[type="text"], form input[type="email"], form input[type="number"]');
+
+
+        const filteredInputs = Array.from(formInputs).filter(input => {
+            
+            let isWithinExperience = input.closest('.experience') !== null;
+            let isWithinAchievements = input.closest('.achievements') !== null;
+            return !isWithinExperience && !isWithinAchievements;
+        });
+
+        const areInputsNotEmpty = Array.from(filteredInputs).every(input => {
+            return input.value.trim() !== ''; 
+        });
+
+        if (areInputsNotEmpty) {
+            
+            
+            let div=document.querySelector("#page");
+            div.style.display="none";
+            let loader=document.querySelector(".loader");
+            loader.style.display="block";
+        } 
+
+            
+            
+            
+            
+
+});
 
 
 

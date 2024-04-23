@@ -35,12 +35,13 @@ footer
 {   
     background-color: #a8a8a9;
     display:flex;
-    padding:0.5rem;
+    /* padding:0.5rem; */
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     position:static;
     bottom:0px;
+    height: auto;
     width:100% !important;
     
     /* height:3.5rem; */
@@ -80,6 +81,7 @@ footer div{
     opacity: 0.5;
     font-size: 1.5rem;
     margin-right:1.5rem;
+    transition-duration:0.7s;
 }
 
 .links a:hover{

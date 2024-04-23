@@ -131,7 +131,7 @@
                     <h2 class="section-title">Education</h2>
                     <ul class="section-content">
                         <% for(let i=0;i<(data.education).length;i+=4) {%>
-                        <li>❖ <%=data.education[i].toUpperCase()%> &nbsp; | &nbsp; <%=data.education[i+1].toUpperCase() %> | &nbsp;&nbsp;&nbsp; CGPA:<%=data.education[i+2]%>|(<%=data.education[i+3]%>)</li>
+                        <li style="position:relative">❖ <%=data.education[i].toUpperCase()%>&nbsp;|&nbsp; <%=data.education[i+1].toUpperCase() %>&nbsp;|&nbsp;CGPA:<%=data.education[i+2]%>&nbsp;|&nbsp;(<%=data.education[i+3]%>)</li>
                         <%}%>
                       
                     </ul>

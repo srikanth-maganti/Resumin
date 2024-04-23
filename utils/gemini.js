@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 async function run(prompt) {
     const generationConfig = {
         stopSequences: ["***","\n"],
-        maxOutputTokens: 80,
+        maxOutputTokens:100,
         temperature: 0.9,
         topP: 1,
         topK: 1,
