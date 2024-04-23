@@ -59,7 +59,7 @@ app.use(async (req,res,next)=>{
 
 
 app.get("/",(req,res)=>{
-    res.render("./templates/form.ejs",{currpage:"form"});
+    res.render("./templates/home.ejs",{currpage:"home"});
 })
 app.get("/templates/new",(req,res)=>{
     res.render("./templates/form.ejs",{currpage:"form"});
