@@ -58,7 +58,9 @@ app.use(async (req,res,next)=>{
 })
 
 
- 
+app.get("/",(req,res)=>{
+    res.render("./templates/form.ejs",{currpage:"form"});
+})
 app.get("/templates/new",(req,res)=>{
     res.render("./templates/form.ejs",{currpage:"form"});
 })
